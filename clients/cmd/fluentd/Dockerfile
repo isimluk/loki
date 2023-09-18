@@ -19,4 +19,5 @@ COPY clients/cmd/fluentd/docker/conf/loki.conf /fluentd/etc/loki.conf
 
 USER root
 RUN sed -i '$i''  @include loki.conf' /fluentd/etc/fluent.conf
+RUN fluent-gem install fluent-plugin-prometheus
 USER fluent
